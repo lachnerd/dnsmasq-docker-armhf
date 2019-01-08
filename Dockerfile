@@ -14,4 +14,4 @@ EXPOSE 53/tcp 53/udp
 VOLUME ["/etc/dnsmasq"]
 
 #run dnsmasq in foreground
-ENTRYPOINT ["dnsmasq","-k"]
+ENTRYPOINT ["dnsmasq","-k","--no-daemon","--log-queries"]
