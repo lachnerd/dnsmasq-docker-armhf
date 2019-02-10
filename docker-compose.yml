@@ -6,8 +6,7 @@ services:
       - /docker-data/dnsmasq/dnsmasq.conf:/etc/dnsmasq.conf
       - /docker-data/dnsmasq/conf:/etc/dnsmasq.d
       - /docker-data/dnsmasq/log:/var/log
-    networks:
-      - host
+    network_mode: "host"
     cap_add:
       - NET_ADMIN
     restart: unless-stopped
