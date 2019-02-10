@@ -1,0 +1,13 @@
+version: '3'
+services:
+  dnsmasq:
+    image: lachnerd/dnsmasq:0.1
+    volumes:
+      - /docker-data/dnsmasq/dnsmasq.conf:/etc/dnsmasq.conf
+      - /docker-data/dnsmasq/conf:/etc/dnsmasq.d
+      - /docker-data/dnsmasq/log:/var/log
+    networks:
+      - host
+    cap_add:
+      - NET_ADMIN
+    restart: unless-stopped
